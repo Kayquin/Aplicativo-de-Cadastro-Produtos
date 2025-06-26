@@ -1,7 +1,12 @@
 import axios from "axios";
 
-const API_URL = "https://apipw.leoproti.com.br:8004/produtos";
-//const API_URL = "https://apipw.leoproti.com.br:8004/produtos";
+const API_URL = "http://leoproti.com.br:8004/produtos";
+
+// HTTP URL for development
+// const API_URL = "http://localhost:8004/produtos";
+
+// HTTPs URL for production
+// const API_URL = "https://apipw.leoproti.com.br:8004/produtos";
  
 
 const listar = async () => {
