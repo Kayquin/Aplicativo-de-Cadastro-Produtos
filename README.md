@@ -2,6 +2,34 @@
 
 Este projeto é um frontend em React (Vite) que realiza operações de CRUD (Create, Read, Update, Delete) para produtos, utilizando a API pública disponível em [http://leoproti.com.br:8004/produtos](http://leoproti.com.br:8004/produtos).
 
+## DEMO
+https://aplicativo-de-cadastro-produtos-5gtn95auf-kayquins-projects.vercel.app/login
+
+```bash
+// src/services/api.js
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "http://leoproti.com.br:8004/",
+});
+
+// Comuniçação com a API HTTPS, porém nâo funciona
+//const api = axios.create({
+//  baseURL: "https://apipw.leoproti.com.br/",
+//});
+
+export default api;
+```
+
+## Login
+- Usuário: admin
+- Senha: admin
+## Cadastro de Produtos
+- Cadastrar novo produto
+- Listar produtos
+- Editar produto
+- Deletar produto
+
 ## Funcionalidades
 
 - Listagem de produtos
