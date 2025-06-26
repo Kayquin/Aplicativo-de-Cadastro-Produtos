@@ -1,36 +1,28 @@
-import axios from "axios";
-
-const API_URL = "http://leoproti.com.br:8004/produtos";
-
-// HTTP URL for development
-// const API_URL = "http://localhost:8004/produtos";
-
-// HTTPs URL for production
-// const API_URL = "https://apipw.leoproti.com.br:8004/produtos";
- 
+// src/services/produtoService.js
+import api from "./api";
 
 const listar = async () => {
-  const { data } = await axios.get(API_URL);
+  const { data } = await api.get("/produtos");
   return data;
 };
 
 const obter = async (id) => {
-  const { data } = await axios.get(`${API_URL}/${id}`);
+  const { data } = await api.get(`/produtos/${id}`);
   return data;
 };
 
 const criar = async (produto) => {
-  const { data } = await axios.post(API_URL, produto);
+  const { data } = await api.post("/produtos", produto);
   return data;
 };
 
 const atualizar = async (id, produto) => {
-  const { data } = await axios.put(`${API_URL}/${id}`, produto);
+  const { data } = await api.put(`/produtos/${id}`, produto);
   return data;
 };
 
 const excluir = async (id) => {
-  await axios.delete(`${API_URL}/${id}`);
+  await api.delete(`/produtos/${id}`);
 };
 
 export default {
