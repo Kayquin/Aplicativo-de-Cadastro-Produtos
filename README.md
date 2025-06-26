@@ -7,7 +7,7 @@ Este projeto é um frontend desenvolvido com **React + Vite**, que realiza opera
 ## 🔗 Demo Online
 
 Acesse a aplicação hospedada na Vercel:  
-👉 [https://aplicativo-de-cadastro-produtos-5gtn95auf-kayquins-projects.vercel.app/login](https://aplicativo-de-cadastro-produtos-5gtn95auf-kayquins-projects.vercel.app/login)
+👉 [https://aplicativo-de-cadastro-produtos-ledflpv1s-kayquins-projects.vercel.app](https://aplicativo-de-cadastro-produtos-ledflpv1s-kayquins-projects.vercel.app)
 
 ---
 
