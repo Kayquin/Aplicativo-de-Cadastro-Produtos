@@ -1,153 +1,101 @@
-# Trabalho Final - Frontend React CRUD Produtos
+# 💻 Trabalho Final - Frontend React CRUD Produtos
 
-Este projeto é um frontend em React (Vite) que realiza operações de CRUD (Create, Read, Update, Delete) para produtos, utilizando a API pública disponível em [http://leoproti.com.br:8004/produtos](http://leoproti.com.br:8004/produtos).
+Este projeto é um frontend desenvolvido com **React + Vite**, que realiza operações de **CRUD (Create, Read, Update, Delete)** para produtos, utilizando uma API pública.
 
-## DEMO
-https://aplicativo-de-cadastro-produtos-5gtn95auf-kayquins-projects.vercel.app/login
+---
 
-```bash
-// src/services/api.js
-import axios from "axios";
+## 🔗 Demo Online
 
+Acesse a aplicação hospedada na Vercel:  
+👉 [https://aplicativo-de-cadastro-produtos-5gtn95auf-kayquins-projects.vercel.app/login](https://aplicativo-de-cadastro-produtos-5gtn95auf-kayquins-projects.vercel.app/login)
+
+---
+
+## 🚀 Funcionalidades
+
+- 📋 Listagem de produtos
+- ➕ Cadastro de novo produto
+- ✏️ Edição de produto
+- ❌ Exclusão de produto
+- 🔐 Tela de login (usuário: `admin` | senha: `admin`)
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Axios](https://axios-http.com/)
+- [React Router DOM](https://reactrouter.com/)
+- [Material UI (MUI)](https://mui.com/)
+
+---
+
+## 🌐 API Pública
+
+Este projeto consome a seguinte API:
+
+```
+http://leoproti.com.br:8004/produtos
+```
+
+---
+
+## ⚠️ Atenção sobre a API
+
+A aplicação está configurada para consumir a API via **HTTP**, pois essa é a forma funcional no momento.
+
+### 🔐 Alternativa segura (HTTPS)
+
+A API também está disponível por HTTPS:
+
+```
+https://apipw.leoproti.com.br/produtos
+```
+
+> ❗ Porém, essa URL pode apresentar problemas de **CORS** ou instabilidade em produção (como na Vercel), por isso mantemos o uso do HTTP até que esteja totalmente funcional.
+
+### 📁 Exemplo de configuração (`src/services/api.js`)
+
+```js
+// HTTP funcional
 const api = axios.create({
   baseURL: "http://leoproti.com.br:8004/",
 });
 
-// Comuniçação com a API HTTPS, porém nâo funciona
-//const api = axios.create({
-//  baseURL: "https://apipw.leoproti.com.br/",
-//});
-
-export default api;
+// HTTPS (opcional - pode falhar)
+const api = axios.create({
+  baseURL: "https://apipw.leoproti.com.br/",
+});
 ```
 
-## Login
-- Usuário: admin
-- Senha: admin
-## Cadastro de Produtos
-- Cadastrar novo produto
-- Listar produtos
-- Editar produto
-- Deletar produto
+---
 
-## Funcionalidades
+## 📂 Organização de Pastas
 
-- Listagem de produtos
-- Cadastro de novo produto
-- Edição de produto existente
-- Exclusão de produto
-- Interface moderna com Material-UI
-- Controle de rotas com React Router
-
-## Estrutura esperada do produto
-
-```json
-{
-  "id": 0,
-  "nome": "string",
-  "preco": 0
-}
+```
+src/
+├── components/        # Componentes reutilizáveis (NavBar, FormProduto, etc)
+├── pages/             # Páginas principais (ListaProdutos, FormProduto, Login)
+├── routes/            # Arquivo de rotas (AppRoutes.jsx)
+├── services/          # Comunicação com API (api.js, produtoService.js)
+└── App.jsx            # Componente principal
 ```
 
-## Tecnologias Utilizadas
+---
 
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [Material-UI (MUI)](https://mui.com/)
-- [React Router DOM](https://reactrouter.com/)
-- [Axios](https://axios-http.com/)
-
-## Instalação do Projeto
-
-1. Instale as dependências principais (execute na pasta do projeto):
-
-   ```bash
-   npm install
-   ```
-
-2. Se for iniciar do zero ou faltar dependências, instale:
-
-   ```bash
-   npm install react react-dom
-   npm install react-router-dom @mui/material @mui/icons-material @emotion/react @emotion/styled axios
-   npm install --save-dev vite @vitejs/plugin-react
-   ```
-
-## Como rodar o projeto
+## ✅ Como rodar localmente
 
 ```bash
-npm run dev
-```
+# Instale as dependências
+npm install
 
-Acesse [http://localhost:5173](http://localhost:5173) no navegador.
-
-## Estrutura de Pastas Sugerida
-
-- `src/pages` — Páginas principais (Listar, Criar, Editar)
-- `src/components` — Componentes reutilizáveis (Formulário, Tabela, etc)
-- `src/services` — Serviços para requisições HTTP (Axios)
-- `src/routes` — Definição das rotas da aplicação
-
-## Rotas da Aplicação
-
-- `/` — Lista todos os produtos
-- `/novo` — Formulário para cadastrar novo produto
-- `/editar/:id` — Formulário para editar produto existente
-
-## Exemplo de Requisição para a API
-
-```js
-// GET todos os produtos
-axios.get("http://leoproti.com.br:8004/produtos")
-
-// POST novo produto
-axios.post("http://leoproti.com.br:8004/produtos", { nome: "Produto", preco: 10 })
-
-// PUT atualizar produto
-axios.put("http://leoproti.com.br:8004/produtos/1", { nome: "Produto Atualizado", preco: 20 })
-
-// DELETE remover produto
-axios.delete("http://leoproti.com.br:8004/produtos/1")
-```
-
-## Solução de Problemas de Dependências
-
-Se aparecer erro de importação para alguma biblioteca, execute o comando correspondente:
-
-- **react-router-dom**  
-  ```bash
-  npm install react-router-dom
-  ```
-
-- **Material-UI**  
-  ```bash
-  npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
-  ```
-
-- **axios**  
-  ```bash
-  npm install axios
-  ```
-
-Depois, reinicie o servidor de desenvolvimento:
-
-```bash
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
 ---
 
-## Erro comum: "Failed to resolve import 'react-router-dom'"
+## 📝 Licença
 
-Esse erro indica que a dependência `react-router-dom` não está instalada.  
-Execute:
-
-```bash
-npm install react-router-dom
-```
-
-Repita o comando para outras dependências se necessário, conforme mostrado acima.
-
----
-
-Siga as instruções acima para rodar e explorar o projeto!
+Projeto com fins educacionais.
